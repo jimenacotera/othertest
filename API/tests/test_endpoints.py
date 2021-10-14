@@ -1,7 +1,9 @@
 
 from unittest import TestCase, skip 
+from flask_restx import Resource, Api
 
 import API.endpoints as ep
+
 
 
 class EndpointTestCase(TestCase):
@@ -12,4 +14,7 @@ class EndpointTestCase(TestCase):
         pass
 
     def test_hello(self):
-       self.assertTrue(False) 
+        hello = ep.HelloWorld(Resource)
+        ret = hello.get()
+        self.assertIsInstance(ret, dict)
+        self.assertIn(ep.HELLO, ret)

@@ -1,7 +1,7 @@
 LINTER = flake8
 API_DIR = API
 DB_DIR = db
-REQ_DIR = .
+REQ_DIR = requirements
 
 FORCE:
 
